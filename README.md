@@ -6,9 +6,14 @@ English.
 
 ```sh
 brew tap alialhawas/harf
-brew trust alialhawas/harf     # Homebrew 6 requires this for taps outside its index
-brew install harf
+brew install --cask alialhawas/harf/harf
 ```
+
+Homebrew 6 will not load a cask from a tap outside its own index until you trust
+it. Installing by the fully qualified name *is* the trust, scoped to this one
+cask — so no `brew trust` step is needed. If you would rather trust the whole
+tap and use the short name, `brew trust alialhawas/harf` then `brew install
+harf` does that instead.
 
 Harf is not notarised by Apple yet, so macOS refuses it the first time. Allow it
 once under **System Settings → Privacy & Security → Open Anyway**, which leaves
